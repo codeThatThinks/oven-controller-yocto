@@ -7,7 +7,36 @@ SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-RUN	apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils debianutils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm locales liblz4-tool zstd
+RUN	apt-get install -y \
+	gawk \
+	wget \
+	git-core \
+	diffstat \
+	unzip \
+	texinfo \
+	gcc-multilib \
+	build-essential \
+	chrpath \
+	socat \
+	cpio \
+	python \
+	python3 \
+	python3-pip \
+	python3-pexpect \
+	xz-utils \
+	debianutils \
+	debianutils \
+	iputils-ping \
+	python3-git \
+	python3-jinja2 \
+	libegl1-mesa \
+	libsdl1.2-dev \
+	pylint3 \
+	locales \
+	liblz4-tool \
+	zstd \
+	screen \
+	libncurses-dev
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 ENV LANG en_US.utf8
