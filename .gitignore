@@ -1,6 +1,7 @@
 cache/
 conf/templateconf.cfg
 downloads/
+sstate-cache/
 tmp/
 bitbake.lock
 bitbake-cookerdaemon.log
