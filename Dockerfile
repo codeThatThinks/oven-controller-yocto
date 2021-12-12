@@ -36,7 +36,8 @@ RUN	apt-get install -y \
 	liblz4-tool \
 	zstd \
 	screen \
-	libncurses-dev
+	libncurses-dev \
+	nano
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 ENV LANG en_US.utf8
