@@ -1,0 +1,72 @@
+/*
+ * Custom device tree overlay for MLL ELectronics Oven Controller
+ *
+ */
+
+/dts-v1/;
+/plugin/;
+
+&spi0 {
+        status = "okay";
+};
+
+&spidev0 {
+	status = "disabled";
+};
+
+&gpio {
+        display_pins: display_pins {
+                brcm,pins = <14 25>;
+                brcm,function = <0 1>; /* in out */
+                brcm,pull = <0 0>; /* none none */
+        };
+};
+
+&spi0 {
+        /* needed to avoid dtc warning */
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        lcd: lcd@0{
+                compatible = "ilitek,ili9481";
+                reg = <0>;
+                pinctrl-names = "default";
+                pinctrl-0 = <&display_pins>;
+
+                spi-max-frequency = <32000000>;
+                rotate = <180>;
+                fps = <25>;
+                bgr;
+                buswidth = <8>;
+                dc-gpios = <&gpio 25 0>;
+                debug = <0>;
+        };
+};
+
+&i2c1 {
+        /* needed to avoid dtc warning */
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        ctp: ft6236@38 {
+                compatible = "focaltech,ft6236";
+                reg = <0x38>;
+
+                interrupt-parent = <&gpio>;
+                interrupts = <14 0>;
+                touchscreen-size-x = <320>;
+                touchscreen-size-y = <480>;
+        };
+};
+
+__overrides__ {
+        speed =   <&lcd>,"spi-max-frequency:0";
+        rotate =  <&lcd>,"rotate:0";
+        fps =     <&lcd>,"fps:0";
+        debug =   <&lcd>,"debug:0";
+        touch-sizex = <&ctp>,"touchscreen-size-x?";
+        touch-sizey = <&ctp>,"touchscreen-size-y?";
+        touch-invx  = <&ctp>,"touchscreen-inverted-x?";
+        touch-invy  = <&ctp>,"touchscreen-inverted-y?";
+        touch-swapxy = <&ctp>,"touchscreen-swapped-x-y?";
+};
