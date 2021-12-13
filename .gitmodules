@@ -10,3 +10,7 @@
 	path = meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
 	branch = honister
+[submodule "meta-qt5"]
+	path = meta-qt5
+	url = git@github.com:meta-qt5/meta-qt5.git
+	branch = honister
