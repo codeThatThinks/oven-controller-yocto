@@ -1,1 +1,1 @@
-KERNEL_DEVICETREE += "overlays/oven-controller.dtbo"
+KERNEL_DEVICETREE:append = " overlays/oven-controller.dtbo"

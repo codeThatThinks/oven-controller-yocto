@@ -5,4 +5,4 @@ SRC_URI:append := " \
 	file://git/arch/arm/boot/dts/overlays/oven-controller-overlay.dts \
 	"
 
-KERNEL_DEVICETREE += "overlays/oven-controller.dtbo"
+KERNEL_DEVICETREE:append = " overlays/oven-controller.dtbo"
