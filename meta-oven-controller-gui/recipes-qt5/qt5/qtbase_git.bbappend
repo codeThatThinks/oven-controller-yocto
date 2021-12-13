@@ -1,1 +1,1 @@
-PACKAGECONFIG += "fontconfig"
+PACKAGECONFIG:append = " fontconfig"
