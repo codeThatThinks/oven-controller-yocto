@@ -15,6 +15,6 @@ do_install:append() {
     install -m 0755 simpleCalculator ${D}/opt/oven-controller-gui/
 }
 
-FILES_${PN} += "/opt/oven-controller-gui/simpleCalculator"
+FILES:${PN} += "/opt/oven-controller-gui/simpleCalculator"
 
 inherit qmake5

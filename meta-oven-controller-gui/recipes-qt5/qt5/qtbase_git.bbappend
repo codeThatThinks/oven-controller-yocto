@@ -1,1 +1,1 @@
-PACKAGECONFIG:append = " fontconfig"
+PACKAGECONFIG:append = " linuxfb fontconfig"
