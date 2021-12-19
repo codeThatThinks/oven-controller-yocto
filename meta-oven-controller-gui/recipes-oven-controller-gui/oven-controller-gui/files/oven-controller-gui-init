@@ -1,0 +1,18 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:             oven-controller-gui
+# Required-Start:
+# Required-Stop:
+# Default-Start:
+# Default-Stop:
+### END INIT INFO
+
+. /etc/default/rcS
+
+if [ ! -e /dev/fb1 ]; then
+    echo "Framebuffer /dev/fb1 not detected"
+    echo "Oven Controller GUI disabled"
+    exit 0;
+fi
+
+QT_QPA_PLATFORM=linuxfb:fb=/dev/fb1 /opt/oven-controller-gui/oven-controller-gui &
