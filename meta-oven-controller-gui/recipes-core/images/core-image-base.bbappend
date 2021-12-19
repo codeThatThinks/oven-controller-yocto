@@ -1,1 +1,1 @@
-IMAGE_INSTALL:append = " oven-controller-gui"
+IMAGE_INSTALL:append = " fontconfig ttf-opensans oven-controller-gui"
