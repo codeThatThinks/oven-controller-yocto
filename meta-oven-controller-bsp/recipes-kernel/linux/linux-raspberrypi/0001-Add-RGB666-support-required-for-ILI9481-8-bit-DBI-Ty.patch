@@ -16,7 +16,7 @@ index 19eba085ea53..80e5fcc82e41 100644
  #include <linux/module.h>
  #include <linux/kernel.h>
  #include <linux/init.h>
-+#include <linux/consumer/gpio.h>
++#include <linux/gpio/consumer.h>
  #include <linux/delay.h>
  #include <video/mipi_display.h>
  
