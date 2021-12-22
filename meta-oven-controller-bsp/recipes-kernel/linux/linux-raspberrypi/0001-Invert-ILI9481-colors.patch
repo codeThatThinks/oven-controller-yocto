@@ -1,0 +1,22 @@
+From 5874640867eac072ec63e96cb66d8bd975ed8928 Mon Sep 17 00:00:00 2001
+From: OpenEmbedded <oe.patch@oe>
+Date: Wed, 22 Dec 2021 04:35:15 +0000
+Subject: [PATCH] Invert ILI9481 colors
+
+---
+ drivers/staging/fbtft/fb_ili9481.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/staging/fbtft/fb_ili9481.c b/drivers/staging/fbtft/fb_ili9481.c
+index 891d1be0eb72..34832feebbd0 100644
+--- a/drivers/staging/fbtft/fb_ili9481.c
++++ b/drivers/staging/fbtft/fb_ili9481.c
+@@ -33,6 +33,8 @@ static const s16 default_init_sequence[] = {
+ 	-1, 0xC0, 0x10, 0x3B, 0x00, 0x02, 0x11,
+ 	/* Frame rate & inv. */
+ 	-1, 0xC5, 0x03,
++	/* Invert colors */
++	-1, 0x21,
+ 	/* Pixel format */
+ 	-1, MIPI_DCS_SET_PIXEL_FORMAT, 0x66,
+ 	/* Gamma */
