@@ -74,6 +74,16 @@
                                 touchscreen-size-x = <320>;
                                 touchscreen-size-y = <480>;
                         };
+
+                        eeprom: eeprom@50 {
+                                compatible = "atmel,at34c04", "atmel,at24c04";
+                                reg = <0x50>;
+
+                                pagesize = <16>;
+                                size = <256>;
+                                address-width = <8>;
+                                num-addresses = <1>;
+                        };
                 };
         };
 
