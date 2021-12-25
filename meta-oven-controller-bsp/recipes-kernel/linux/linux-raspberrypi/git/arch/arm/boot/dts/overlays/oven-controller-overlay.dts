@@ -47,8 +47,8 @@
                                 pinctrl-names = "default";
                                 pinctrl-0 = <&oven_controller_pins>;
 
-                                spi-max-frequency = <32000000>;
-                                rotate = <90>;
+                                spi-max-frequency = <12000000>;
+                                rotate = <180>;
                                 fps = <25>;
                                 bgr;
                                 buswidth = <8>;
