@@ -9,3 +9,4 @@ SRC_URI:append := " \
 	"
 
 KERNEL_DEVICETREE:append = " overlays/oven-controller.dtbo"
+KERNEL_MODULE_AUTOLOAD:append = " i2c-dev"
