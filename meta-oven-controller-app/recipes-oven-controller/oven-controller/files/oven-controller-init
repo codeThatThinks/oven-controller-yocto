@@ -1,6 +1,6 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:             oven-controller-gui
+# Provides:             oven-controller
 # Required-Start:
 # Required-Stop:
 # Default-Start:
@@ -15,4 +15,4 @@ if [ ! -e /dev/fb1 ]; then
     exit 0;
 fi
 
-QT_QPA_PLATFORM=linuxfb:fb=/dev/fb1 /opt/oven-controller-gui/oven-controller-gui &
+QT_QPA_PLATFORM=linuxfb:fb=/dev/fb1 /opt/oven-controller/oven-controller &
