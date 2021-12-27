@@ -3,8 +3,8 @@ DESCRIPTION = "This recipe builds the Python application code for the Oven Contr
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
-DEPENDS_${PN} = "python3 python3-pyqt5"
-RDEPENDS_${PN} = "python3 python3-logging python3-misc python3-multiprocessing python3-pyqt5 python3-smbus2 python3-stringold"
+DEPENDS_${PN} = "python3 python3-pyqt5 rpio"
+RDEPENDS_${PN} = "python3 python3-logging python3-misc python3-multiprocessing python3-pyqt5 python3-smbus2 python3-stringold rpio"
 
 SRC_URI = "git://github.com/codeThatThinks/oven-controller-app;branch=master \
            file://oven-controller-init"
