@@ -1,0 +1,46 @@
+From 1b673967350f8f4de8148e6c60e2af49ee68badf Mon Sep 17 00:00:00 2001
+From: OpenEmbedded <oe.patch@oe>
+Date: Sun, 26 Dec 2021 20:51:20 -0500
+Subject: [PATCH] Adjust ILI9481 power and gamma settings
+
+---
+ drivers/staging/fbtft/fb_ili9481.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/staging/fbtft/fb_ili9481.c b/drivers/staging/fbtft/fb_ili9481.c
+index 34832feebbd0..85671cb3955d 100644
+--- a/drivers/staging/fbtft/fb_ili9481.c
++++ b/drivers/staging/fbtft/fb_ili9481.c
+@@ -24,13 +24,17 @@ static const s16 default_init_sequence[] = {
+ 	-1, MIPI_DCS_EXIT_SLEEP_MODE,
+ 	-2, 50,
+ 	/* Power setting */
+-	-1, 0xD0, 0x07, 0x42, 0x18,
++	/* VC=1, BT=1, PON=1, VREG1OUT=4.750V, VCIRE=1 */
++	-1, 0xD0, 0x01, 0x41, 0x1E,
+ 	/* VCOM */
+-	-1, 0xD1, 0x00, 0x07, 0x10,
++	/* SELVCM=0, VCM=0C, VDV=1A */
++	-1, 0xD1, 0x00, 0x0C, 0x1A,
+ 	/* Power setting for norm. mode */
+-	-1, 0xD2, 0x01, 0x02,
++	/* AP0=1, DC00=1, DC10=1 */
++	-1, 0xD2, 0x01, 0x11,
+ 	/* Panel driving setting */
+-	-1, 0xC0, 0x10, 0x3B, 0x00, 0x02, 0x11,
++	/* GS=0, SM=0, REV=0, NL=3B, SCN=0, PTV=2, PTS=1, NDL=1 */
++	-1, 0xC0, 0x00, 0x3B, 0x00, 0x02, 0x11,
+ 	/* Frame rate & inv. */
+ 	-1, 0xC5, 0x03,
+ 	/* Invert colors */
+@@ -38,8 +42,8 @@ static const s16 default_init_sequence[] = {
+ 	/* Pixel format */
+ 	-1, MIPI_DCS_SET_PIXEL_FORMAT, 0x66,
+ 	/* Gamma */
+-	-1, 0xC8, 0x00, 0x32, 0x36, 0x45, 0x06, 0x16,
+-		  0x37, 0x75, 0x77, 0x54, 0x0C, 0x00,
++	-1, 0xC8, 0x00, 0x26, 0x21, 0x00, 0x00, 0x1F,
++		  0x65, 0x23, 0x77, 0x00, 0x0F, 0x00,
+ 	/* DISP_ON */
+ 	-1, MIPI_DCS_SET_DISPLAY_ON,
+ 	-3
