@@ -20,3 +20,7 @@ RDEPENDS:${PN} = "\
 "
 
 inherit setuptools3
+
+do_unpack:append() {
+	dos2unix ${S}/*
+}
