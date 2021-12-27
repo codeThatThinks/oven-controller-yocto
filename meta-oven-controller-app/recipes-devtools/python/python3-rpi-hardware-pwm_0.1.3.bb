@@ -5,7 +5,7 @@ SECTION = "devel/python"
 LICENSE = "GPLv3+"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=37b358b4f853ea8b2bfd5b5a72bb0286"
 
-PYPI_PACKAGE = "rpi-hardware-pwm"
+PYPI_PACKAGE = "rpi_hardware_pwm"
 inherit pypi
 
 inherit setuptools3
