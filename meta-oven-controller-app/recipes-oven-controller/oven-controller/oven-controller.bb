@@ -8,7 +8,9 @@ RDEPENDS_${PN} = "python3 python3-logging python3-misc python3-multiprocessing p
 
 SRC_URI = "git://github.com/codeThatThinks/oven-controller-app;branch=master \
            file://oven-controller-init"
-SRCREV = "39f4cbb9eea8a525556e1f7e23976851d0ab3038"
+SRCREV = "${AUTOREV}"
+
+PV = "0.1+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
