@@ -5,9 +5,8 @@ ARG GROUP_ID
 
 SHELL ["/bin/bash", "-c"]
 
-RUN apt-get update
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-RUN	apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN apt-get update && apt-get install -y \
 	gawk \
 	wget \
 	git-core \
