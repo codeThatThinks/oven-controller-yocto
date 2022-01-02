@@ -7,5 +7,5 @@ SRC_URI:append := " \
 	file://0001-Adjust-ILI9481-power-and-gamma-settings.patch \
 	"
 
-KERNEL_DEVICETREE:append = " overlays/pwm-2chan.dtbo overlays/oven-controller.dtbo"
+KERNEL_DEVICETREE:append = " overlays/i2c-gpio.dtbo overlays/pwm-2chan.dtbo overlays/oven-controller.dtbo"
 KERNEL_MODULE_AUTOLOAD:append = " i2c-dev"
