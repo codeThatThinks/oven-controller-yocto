@@ -7,14 +7,14 @@ Update submodules after clone:
 git submodule update --init
 ```
 
-To launch a development environment:
+To build the entire image, first launch a development environment:
 
 ```
 make shell
 ```
 
-To build the entire image automatically:
+Then inside the docker image, run bitbake:
 
 ```
-make
+bitbake core-image-base
 ```
