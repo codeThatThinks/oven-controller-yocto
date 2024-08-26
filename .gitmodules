@@ -4,7 +4,7 @@
 	branch = honister
 [submodule "meta-raspberrypi"]
 	path = meta-raspberrypi
-	url = git://github.com/agherzan/meta-raspberrypi.git
+	url = git@github.com:agherzan/meta-raspberrypi.git
 	branch = honister
 [submodule "meta-openembedded"]
 	path = meta-openembedded
