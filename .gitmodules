@@ -1,6 +1,6 @@
 [submodule "poky"]
 	path = poky
-	url = git://git.yoctoproject.org/poky.git
+	url = https://git.yoctoproject.org/poky.git
 	branch = honister
 [submodule "meta-raspberrypi"]
 	path = meta-raspberrypi
@@ -8,7 +8,7 @@
 	branch = honister
 [submodule "meta-openembedded"]
 	path = meta-openembedded
-	url = git://git.openembedded.org/meta-openembedded
+	url = https://git.openembedded.org/meta-openembedded
 	branch = honister
 [submodule "meta-qt5"]
 	path = meta-qt5
